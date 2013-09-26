@@ -1,0 +1,97 @@
+<!--
+SPASS OAuth Client Example
+Author: Lorenzo Dematté - Servizi ST 
+Copyright (C) 2013 Servizi ST Srl
+
+This file is part of the SPASS OAuth Client Example.
+
+SPASSOAuthClientExample is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+SPASSOAuthClientExample is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License v3
+along with SPASSOAuthClientExample.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+</style>
+
+<div>
+  <hr>
+
+  <h2>Your user profile</h2>
+  
+  	<div class="row-fluid marketing">
+        <div class="span6">
+          <h4>Authentication</h4>
+          <div data-ng-show="auth().authenticated">
+          	<p>You are currently authenticated as {{auth().loggedUser}}</p>  
+      	  </div>
+          <div data-ng-hide="auth().authenticated">
+          	<p>You are currently NOT autheticated. <a href="#/login">Login</a> to continue</p>  
+      	  </div>          	       
+        </div>
+
+        <div class="span6">
+        	<div data-ng-show="auth().authenticated">
+        		<h4>Association</h4>
+	    		<div data-ng-hide="auth().associated">		    			
+	        		Do you want to use your PASS with us?
+					<a href="/sii-auth-request">click here</a>
+					and authorize SII to share with us your card data.
+					You will need to login with SII, and authorize us to access some of your data.
+					We respect your privacy.
+				</div>
+				<div data-ng-show="auth().associated">	
+				    Your Foo Car Rental and SPASS account are already linked. 
+					Access token: {{auth().accessToken}}
+			    </div>
+			    <div data-ng-show="auth().associated">	
+			    	<h4>Card</h4>
+			    	The following card can be used with us: {{auth().ticketNumber}}
+			    </div>			    
+		    </div>
+		</div>
+	</div>	
+</div>
