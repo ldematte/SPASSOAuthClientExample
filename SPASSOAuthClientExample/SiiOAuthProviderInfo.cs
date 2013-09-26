@@ -53,16 +53,16 @@ namespace SPASSOAuthClientExample {
 
 		public static string Name = "SII";
 
-		public static String API_URL = "http://wssad191.sad.it/oAuth";
-		public static String API_KEY = "9f496418591b0d5cddde4055280703b7";
+		public static String API_URL = "https://www.sii.bz.it/oAuth";
+		public static String API_KEY = "HERE_GOES_YOUR_CLIENT_KEY";
 		public static String API_SECRET = "USE_RSA_KEY";
-		public static String CALLBACK_URL = "http://client13-207.sad.it:9000/sii-auth-callback";
+		public static String CALLBACK_URL = "http://your_domain/sii-auth-callback";
 
 		static String requestURL = API_URL + "/request.php";
 		static String accessURL = API_URL + "/access.php";
 		static String authorizeURL = API_URL + "/authorize.php";
-		static String certificateFileName = "certificate.pem";
-		static String privateKeyFileName = "private.pem";
+		static String certificateFileName = "path_to_certificate.pem";
+		static String privateKeyFileName = "path_to_private.pem";
 
 		private static byte[] PEM (string type, string pem)
 		{
